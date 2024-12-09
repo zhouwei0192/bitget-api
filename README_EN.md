@@ -1,6 +1,6 @@
 # Bitget Go
 
-使用此sdk前请阅读api文档 [Bitget API](https://bitgetlimited.github.io/apidoc/en/mix/)
+This is a lightweight library that works as a connector to [Bitget API](https://bitgetlimited.github.io/apidoc/en/mix/)
 
 ## Supported API Endpoints:
 - pkg/client/v1: `*client.go`
@@ -8,13 +8,12 @@
 - pkg/client/ws: `bitgetwsclient.go`
 
 
-## 下载
+## Installation
 ```shell
 git clone git@github.com:BitgetLimited/v3-bitget-api-sdk.git
 ```
 
 ## REST API Demo
-
 ```go
 package test
 
@@ -130,10 +129,11 @@ func TestBitgetWsClient_New(t *testing.T) {
   })
   client.Connect()
 }
+
 ```
 
 ## RSA
-如果你的apikey是RSA类型则主动设置签名类型为RSA
+If your apikey is of RSA type, actively set the signature type to RSA
 ```go
 // config.go
 const (
@@ -141,10 +141,9 @@ const (
 	WsUrl   = "wss://ws.bitget.com/mix/v1/stream"
 
 	ApiKey        = ""
-	SecretKey     = "" // 如果是RSA类型则设置RSA私钥
+	SecretKey     = "" // If it is RSA type, set the RSA private key
 	PASSPHRASE    = ""
 	TimeoutSecond = 30 
-	SignType      = constants.RSA // 如果你的apikey是RSA类型则主动设置签名类型为RSA
+	SignType      = constants.RSA // If your apikey is of RSA type, actively set the signature type to RSA
 )
 ```
-
